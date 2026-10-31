@@ -100,14 +100,16 @@ export default function CustomerMenu({ onOpenItem }) {
         onSelect={handleCategoryChange} 
       />
 
-      {/* Sub-category Tabs */}
+            {/* Sub-category Tabs */}
       {!search && subsections.length > 0 && (
-        <div className="flex overflow-x-auto hide-scrollbar space-x-2 py-4">
+        /* Changed from overflow-x-auto to flex-wrap so they stack */
+        <div className="flex flex-wrap gap-2 py-4">
           {subsections.map(sub => (
             <button
               key={sub}
               onClick={() => setActiveSubsection(sub)}
-              className={`whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors border ${
+              // Reduced padding, font size, and letter spacing
+              className={`px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wide transition-colors border ${
                 activeSubsection === sub
                   ? 'bg-brand-50 text-brand-700 border-brand-600 dark:bg-brand-900/30 dark:text-brand-300 dark:border-brand-500'
                   : 'bg-transparent text-ink-muted border-cream-line hover:bg-cream-soft dark:text-cream/60 dark:border-night-line dark:hover:bg-night-line'
@@ -118,7 +120,6 @@ export default function CustomerMenu({ onOpenItem }) {
           ))}
         </div>
       )}
-
       {/* Menu Items Area */}
       <div className="mt-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
