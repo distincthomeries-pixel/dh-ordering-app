@@ -107,8 +107,8 @@ export default function CustomerMenu({ onOpenItem }) {
             <button
               key={sub}
               onClick={() => setActiveSubsection(sub)}
-              // Reduced padding, font size, and letter spacing
-              className={`px-3 py-1.5 rounded-lg text-[11px] font-bold uppercase tracking-wide transition-colors border ${
+              // INCREASED SIZE HERE: text-xs, px-4, py-2
+              className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wide transition-colors border-2 ${
                 activeSubsection === sub
                   ? 'bg-brand-50 text-brand-700 border-brand-600 dark:bg-brand-900/30 dark:text-brand-300 dark:border-brand-500'
                   : 'bg-transparent text-ink-muted border-cream-line hover:bg-cream-soft dark:text-cream/60 dark:border-night-line dark:hover:bg-night-line'
@@ -119,6 +119,7 @@ export default function CustomerMenu({ onOpenItem }) {
           ))}
         </div>
       )}
+      
       {/* Menu Items Area */}
       <div className="mt-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
