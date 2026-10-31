@@ -28,9 +28,8 @@ export default function CustomerMenu({ onOpenItem }) {
     const uniqueSubs = [...new Set(subs)];
 
     // Force this specific order:
-    const preferredOrder = [
-      'Rice Packages', 'Swallow Packages', 'Porridge Packages',
-      'Rice', 'Swallow', 'Others', 'Proteins'
+        const preferredOrder = [
+      'Rice', 'Swallow', 'Porridge', 'Others', 'Proteins'
     ];
 
     return uniqueSubs.sort((a, b) => {
